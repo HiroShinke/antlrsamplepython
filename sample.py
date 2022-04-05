@@ -79,7 +79,17 @@ class EvalVisitor(ArithmeticVisitor):
         else:
             return 0
 
-        
+
+def runParser(str):
+    visitor = EvalVisitor()    
+    data =  InputStream(str)
+    lexer = ArithmeticLexer(data)
+    stream = CommonTokenStream(lexer)
+    parser = ArithmeticParser(stream)
+    tree = parser.file_()
+    output = visitor.visit(tree)
+    return output
+    
 def main():
 
     visitor = EvalVisitor()
