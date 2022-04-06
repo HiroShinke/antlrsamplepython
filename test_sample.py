@@ -41,7 +41,14 @@ class SampleTest(unittest.TestCase):
 
         v = runParser("(1+2)/3\n")
         self.assertEqual( v, 1)
+
+    def test5(self):
         
+        v = runParser("10.0e+10\n")
+        self.assertEqual( v, 10.0e+10)
+
+        v = runParser("10.0E+10\n")
+        self.assertEqual( v, 10.0e+10)
         
 
 if __name__ == "__main__":

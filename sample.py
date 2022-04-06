@@ -69,7 +69,7 @@ class EvalVisitor(ArithmeticVisitor):
     def visitAtom(self,ctx):
         
         if ctx1 := ctx.scientific():
-            return int(ctx1.getText())
+            return float(ctx1.getText())
         if ctx2 := ctx.variable():
             id = ctx2.getText()
             if id in self.bindings:
