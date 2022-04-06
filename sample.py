@@ -50,7 +50,7 @@ class EvalVisitor(ArithmeticVisitor):
         else:
             raise Exception("somethin wrong")
         
-    def visitPowerExpr(self,ctx):
+    def visitPowExpr(self,ctx):
         left = self.visit(ctx.expression(0))
         right = self.visit(ctx.expression(1))
         return left ** right
