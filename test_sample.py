@@ -32,6 +32,16 @@ class SampleTest(unittest.TestCase):
         
         v = runParser("2 ^ 3\n")
         self.assertEqual( v, (2 ** 3) )
+
+
+    def test4(self):
+        
+        v = runParser("(1+2)*3\n")
+        self.assertEqual( v, 9)
+
+        v = runParser("(1+2)/3\n")
+        self.assertEqual( v, 1)
+        
         
 
 if __name__ == "__main__":
